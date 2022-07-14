@@ -1,8 +1,8 @@
+*{
+  font-family: Josefin Sans;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +10,15 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.App{
+  height: 100vh;
+  background-image: url('./img/bg-desktop-dark.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color :hsl(235, 21%, 11%)
+}
+.wrapper{
+  max-width: 600px;
+  margin: 0 auto;
 }

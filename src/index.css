@@ -14,3 +14,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+#check-box:checked ~ .check-1 {
+  @apply text-opacity-100;
+  animation: check-anime 0.5s 1;
+}
+@keyframes check-anime {
+  0%,
+  100% {
+    @apply transform scale-100;
+  }
+  50% {
+    @apply transform scale-150;
+  }
+}

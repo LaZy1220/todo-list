@@ -1,14 +1,12 @@
-import './Form.css'
 
 export function Form(){
     return(
-        <div className="form">
-            <form>
+            <form className="mb-14 shadow-xl">
                 <input
+                className='bg-neutral-800 h-16 w-full text-center text-white rounded-xl text-xl'
                 type='text'
                 name='title'
                 placeholder='add new todos'/>
             </form>
-        </div>
     )
 }

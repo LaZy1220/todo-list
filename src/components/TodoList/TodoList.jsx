@@ -8,14 +8,14 @@ import { Filters } from "../Filters/Filters"
 
 export function TodoList(){
     const dispatch = useDispatch()
-    const {filter}= useParams()
+    const {filter='all'}= useParams()
     const todos = useSelector(state=>selectActiveTodo(state,filter))
     return(
     <>
-        <ul className="shadow-xl">
+        <ul className="shadow-xl ">
             {
                 todos.map(todo=>(
-                    <li className='flex justify-between bg-neutral-800 w-full text-center text-white text-xl' style={{borderBottom: '1px solid white'}} key={todo.id}>
+                    <li className=' break-all flex justify-between sm: bg-neutral-800 w-full text-center text-white text-xl  break-normal' style={{borderBottom: '1px solid white'}} key={todo.id}>
                         <div className="m-6 flex ">
                         <label className="relative bottom-1 cursor-pointer">
                         <input id="check-box" className=" appearance-none h-7 w-7 rounded-full border-2  relative top-1" type='checkbox' checked={todo.complited} onChange={()=>dispatch(toggleTodo(todo.id))}/>

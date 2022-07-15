@@ -1,4 +1,7 @@
-*{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
   font-family: Josefin Sans;
 }
 body {
@@ -8,17 +11,6 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-.App{
-  height: 100vh;
-  background-image: url('./img/bg-desktop-dark.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-color :hsl(235, 21%, 11%)
-}
-.wrapper{
-  max-width: 600px;
-  margin: 0 auto;
 }

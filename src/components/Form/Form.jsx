@@ -5,8 +5,12 @@ export function Form(){
     const dispatch  = useDispatch()
     const handleSubmit = (e)=>{
         e.preventDefault()
-        dispatch(addTodo(e.target.title.value))
-        e.target.reset()
+        if(e.target.title.value.trim()){
+            dispatch(addTodo(e.target.title.value))
+            e.target.reset()
+            return
+        }
+        alert('Empty line')
     }
     return(
             <form className="mb-14 shadow-xl" onSubmit={handleSubmit}>

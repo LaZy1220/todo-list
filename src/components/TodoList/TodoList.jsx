@@ -1,17 +1,21 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { useSelector,useDispatch } from "react-redux"
-import { selectAllTodo } from "../../store/todos/todo-select"
+import { selectActiveTodo } from "../../store/todos/todo-select"
 import { removeTodo,toggleTodo } from "../../store/todos/todo-action"
+import {useParams} from 'react-router-dom'
+import { Filters } from "../Filters/Filters"
 
 export function TodoList(){
     const dispatch = useDispatch()
-    const todos = useSelector(selectAllTodo)
+    const {filter}= useParams()
+    const todos = useSelector(state=>selectActiveTodo(state,filter))
     return(
+    <>
         <ul className="shadow-xl">
             {
                 todos.map(todo=>(
-                <li className='flex justify-between bg-neutral-800 w-full text-center text-white text-xl' style={{borderBottom: '1px solid white'}} key={todo.id}>
+                    <li className='flex justify-between bg-neutral-800 w-full text-center text-white text-xl' style={{borderBottom: '1px solid white'}} key={todo.id}>
                         <div className="m-6 flex ">
                         <label className="relative bottom-1 cursor-pointer">
                         <input id="check-box" className=" appearance-none h-7 w-7 rounded-full border-2  relative top-1" type='checkbox' checked={todo.complited} onChange={()=>dispatch(toggleTodo(todo.id))}/>
@@ -29,5 +33,7 @@ export function TodoList(){
                 ))
             }
         </ul>
+        <Filters/>
+    </>
     )
 }

@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from "./todo-const";
+import { ADD_TODO, REMOVER_COMPLITED, REMOVE_TODO, TOGGLE_TODO } from "./todo-const";
 
 export const addTodo = (title)=>({
     type:ADD_TODO,
@@ -11,4 +11,7 @@ export const removeTodo = (id)=>({
 export const toggleTodo = (id)=>({
     type:TOGGLE_TODO,
     id,
+})
+export const removeComplited = ()=>({
+    type:REMOVER_COMPLITED,
 })
